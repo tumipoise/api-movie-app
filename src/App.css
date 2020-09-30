@@ -1,25 +1,29 @@
-*{
-  background-color:#111;
-}
-.movies{
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.title{
-  color:white;
-  font-weight:bold;
-  text-align: center;
-  font-size:2rem;
-  margin-top:1rem;
-}
-.year{
-  color:rgb(204, 196, 196);
-  text-align: center;
-  margin-top:1rem;
-  font-size:1.7rem;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #111;
+  color: white;
+  padding-left:3.9rem;
 }
 
-@media(max-width:400px){
-  
+.movie{
+  margin-top:6rem;
+  position:relative;
+}
+.movie__title {
+  margin: 0;
+}
+
+.movie__title, .movie__year {
+  text-align: center;
+  padding-right:5rem;
+}
+
+.wrapper2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #111;
+  color: white;
+  padding-right:3.9rem;
 }
