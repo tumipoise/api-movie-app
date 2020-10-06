@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
+import { Router, Route, Link} from 'react-router'
 import image1 from '../images/image1.svg'
-import image2 from '../images/image2.svg'
-import image3 from '../images/image3.svg'
-import image4 from '../images/image4.svg'
-import image5 from '../images/image5.svg'
-import image6 from '../images/image6.svg'
-import image7 from '../images/image7.svg'
-import image8 from '../images/image8.svg'
 
 class MovieList extends Component{
     render() {
