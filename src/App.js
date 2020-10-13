@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
-import './App.css';
-import MovieList from './components/MovieList';
+import React, { Component } from "react";
+import "./App.css";
+import MovieList from "./components/MovieList";
+import BaseRouter from "./route";
+import { BrowserRouter as Router } from "react-router-dom";
 
-class App extends Component{
+class App extends Component {
   render() {
     return (
-      <div class="container">
-       <MovieList />
-      </div>
-    )
+      <Router>
+        <div class="container">
+          <BaseRouter></BaseRouter>
+        </div>
+      </Router>
+    );
   }
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
-import image1 from "../images/image1";
+import image1 from "../images/image1.svg";
 
-function MovieLandingPage() {
+function MovieDetails() {
   return (
     <div className="wrappper2">
       <div className="movie-left">
@@ -26,4 +26,4 @@ function MovieLandingPage() {
   );
 }
 
-export default MovieLandingPage;
+export default MovieDetails;
