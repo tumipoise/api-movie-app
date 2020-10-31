@@ -1,19 +1,17 @@
-import React, { Component } from "react";
-import "./App.css";
-import MovieList from "./components/MovieList";
+import React from "react";
 import BaseRouter from "./route";
 import { BrowserRouter as Router } from "react-router-dom";
+import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div class="container">
-          <BaseRouter></BaseRouter>
-        </div>
-      </Router>
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <BaseRouter></BaseRouter>
+    </Router>
+  );
 }
 
 export default App;
+
+
+

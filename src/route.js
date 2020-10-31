@@ -7,7 +7,7 @@ const BaseRouter = () => {
   return (
     <>
       <Route exact path="/" component={MovieList} />
-      <Route path="/:id" component={MovieDetails} />
+      <Route path="/movies/single/:id" component={MovieDetails} />
     </>
   );
 };

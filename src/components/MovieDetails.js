@@ -1,29 +1,46 @@
-import React from "react";
-import image1 from "../images/image1.svg";
+import React, { useState, useEffect } from "react";
+import Loader from "./Loader";
 
-function MovieDetails() {
-  return (
-    <div className="wrappper2">
-      <div className="movie-left">
-        <img src={image1} />
+function MovieDetails(props) {
+  const [movieDetails, setMovieDetails] = useState({});
+
+  useEffect(() => {
+    const fetchMovieDetails = async () => {
+      const res = await fetch(
+        `https://yts.mx/api/v2/movie_details.json?movie_id=${props.match.params.id}`
+      );
+      const response = await res.json();
+
+      setMovieDetails(() => {
+        return response.data.movie;
+      });
+    };
+    fetchMovieDetails();
+  });
+  if (Object.keys(movieDetails).length === 0 || movieDetails === undefined) {
+    return <Loader />;
+  } else {
+    const {
+      medium_cover_image,
+      title,
+      year,
+      description_intro,
+      genres,
+    } = movieDetails;
+    return (
+      <div className="wrapper2">
+        <div className="left">
+          <img src={medium_cover_image} alt="Movie" className="img2" />
+        </div>
+        <div className="right">
+          <h2 className="movie-title2">{title}</h2>
+          <h6 className="movie-year2">{year}</h6>
+          <h6 className="movie-brief2">{genres}</h6>
+          <p className="movie-details2">{description_intro}</p>
+        </div>
       </div>
-      <div className="text-right">
-        <h2 className="movie-title">Blade runner 2040</h2>
-        <h6 className="movie-year">2020</h6>
-        <h6 className="movie-brief">
-          Action / Drama / Mystery / Sci-Fi / Thriller
-        </h6>
-        <p className="movie-details">
-          Thirty years after the events of Blade Runner (1982), a new Blade
-          Runner, L.A.P.D. Officer "K" (Ryan Gosling), unearths a long-buried
-          secret that has the potential to plunge what's left of society into
-          chaos. K's discovery leads him on a quest to find Rick Deckard
-          (Harrison Ford), a former L.A.P.D. Blade Runner, who has been missing
-          for thirty years.
-        </p>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default MovieDetails;

@@ -1,29 +1,134 @@
+body {
+  background-color: #222 !important;
+  color: white !important;
+}
+
+.movie-link {
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: white;
+}
 
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background-color: #111;
-  color: white;
-  padding-left:3.9rem;
+  display: flex;
+  /* justify-content:space-between; */
+  flex-wrap: wrap;
+  margin-top: 6rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.movie{
-  margin-top:6rem;
-  position:relative;
+
+.movie {
+  margin: 1rem 3rem 1rem 3rem;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
 }
+
+
 .movie__title {
-  margin: 0;
+  font-size: 1.6rem;
+  margin-top: 1.2rem;
+  text-decoration: none;
 }
 
-.movie__title, .movie__year {
-  text-align: center;
-  padding-right:5rem;
+.movie__year {
+  font-size: 1.3rem;
+  font-weight: 200;
+}
+
+/* MOVIE DETAILS */
+
+@media(max-width:768px) {
+  .wrapper2 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .right {
+    margin-left: 0 !important;
+    top: -7rem;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .wrapper2 {
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5rem;
+  background-color: #222;
+}
+
+.right {
+  margin-left: 4rem;
+  top: -7rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.img2 {
+  height: 500px;
+  width: 350px;
+}
+
+.movie-title2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.movie-year2 {
+  margin-top: 2rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.movie-brief2 {
+  margin-bottom: 3rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.movie-details2 {
+  font-size: 1.4rem;
+}
+
+/* .wrapper2 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 40% 60%;
   background-color: #111;
   color: white;
-  padding-right:3.9rem;
+  padding-right: 3.9rem;
+  padding: 5rem;
 }
+
+.right {
+  margin-left: 4rem;
+  margin-top: 7rem;
+}
+
+.img2 {
+  height: 20% !important;
+  width: 80%;
+}
+
+.movie-title2 {
+  font-weight: bold;
+}
+
+.movie-year2 {
+  margin-top: 2rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.movie-brief2 {
+  margin-bottom: 3rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+} */

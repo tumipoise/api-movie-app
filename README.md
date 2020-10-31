@@ -1,3 +1,6 @@
+movieAPI = "https://yts.mx/api/v2/list_movies.json?quality=3D"
+movieDetails = "https://yts.mx/api/v2/movie_details.json?movie_id=10"
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

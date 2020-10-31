@@ -1,19 +1,37 @@
-import React from "react";
-import image1 from "../images/image1.svg";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+// import axios from "axios";
 
-const MovieList = () => {
-  return (
-    <div className="wrapper">
-      <Link to="/1">
-        <div className="movie">
-          <img src={image1} className="movie__image" />
-          <h2 className="movie__title">Onward</h2>
-          <h3 className="movie__year">2020</h3>
-        </div>
-      </Link>
-    </div>
-  );
-};
+import SingleMovie from "./SingleMovie";
+import Loader from "./Loader";
+
+function MovieList() {
+  const [movies, setMovies] = useState([]);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const fetchMovie = async () => {
+      try {
+        const res = await fetch(
+          "https://yts.mx/api/v2/list_movies.json?quality=3D"
+        );
+        const response = await res.json();
+        setMovies(() => {
+          return response.data.movies;
+        });
+      } catch (e) {
+        return setError(e);
+      }
+    };
+    fetchMovie();
+  }, [setMovies, setError]);
+
+  if (movies.length === 0 || movies === undefined) {
+    return <Loader />;
+  } else {
+    return movies.map((movie) => {
+      return <SingleMovie movies={movie} />;
+    });
+  }
+}
 
 export default MovieList;
