@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import axios from "axios";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import SingleMovie from "./SingleMovie";
 import Loader from "./Loader";
 
@@ -18,8 +18,8 @@ function MovieList() {
         setMovies(() => {
           return response.data.movies;
         });
-      } catch (e) {
-        return setError(e);
+      } catch (error) {
+        return setError(error);
       }
     };
     fetchMovie();
@@ -29,7 +29,11 @@ function MovieList() {
     return <Loader />;
   } else {
     return movies.map((movie) => {
-      return <SingleMovie movies={movie} />;
+      return (
+        <div className="movies">
+          <SingleMovie movies={movie} />
+        </div>
+      );
     });
   }
 }

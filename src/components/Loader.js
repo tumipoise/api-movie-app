@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
- function Loader() {
-    return (
-        <div>
-            <h1>Loading....</h1>
-        </div>
-    )
+function Loader() {
+  return (
+    <div className="spinner-grow text-danger" role="status">
+      <span className="sr-only">Loading...</span>
+    </div>
+  );
 }
 
-export default Loader
+export default Loader;
